@@ -163,7 +163,7 @@ parse_command_line() {
 
 install_chart_releaser() {
     echo "Installing chart-releaser..."
-
+    echo "testing github action"
     curl -sSLo cr.tar.gz "https://github.com/helm/chart-releaser/releases/download/$version/chart-releaser_${version#v}_linux_amd64.tar.gz"
     tar -xzf cr.tar.gz
     sudo mv cr /usr/local/bin/cr
