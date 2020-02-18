@@ -199,6 +199,9 @@ package_chart() {
 
     echo "Packaging chart '$chart'..."
     which helm
+    curl -sSLo helm.tar.gz https://get.helm.sh/helm-v3.1.0-linux-amd64.tar.gz
+    tar -xzf helm.tar.gz
+    sudo mv linux-amd64/helm /usr/local/bin/helm
     helm package "$chart" --destination .cr-release-packages --dependency-update --save=false
 }
 
